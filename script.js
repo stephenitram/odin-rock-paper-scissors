@@ -27,6 +27,10 @@ function computerPlay () {
 }
 
 
+ /**
+* playRound(playerSelection, computerSelection) and returns a string that declears 
+* the winner of the round e.g. "you loose! Paper beats Rock"
+*/
 
 function playRound (a, b) {
     console.log(`You:${a} --- Computer:${b}`);
@@ -51,14 +55,9 @@ function playRound (a, b) {
  * 
  
  * Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that 
- * keeps score and reports a winner or loser at the end.You have not officially learned how to “loop” over code 
- * to repeat function calls… 
+ * keeps score and reports a winner or loser at the end.
  * 
- * At this point you should be using console.log() to display the results of each round and the winner at the end.
  */
-
-
-
 
 function game(){
     console.log(`A GAME OF ROCK PAPER SCISSORS [ YOU vs THE COMPUTER ]`);
@@ -67,10 +66,7 @@ function game(){
     let numOfPlay = 0
 
     while (numOfPlay !== 5 ) {
-        /**
-     * playRound(playerSelection, computerSelection) and returns a string that declears 
-     * the winner of the round e.g. "you loose! Paper beats Rock"
-     */
+ 
     const playerSelection = capitalize(prompt(`rock, paper or Scissors ?`))
     const computerSelection = computerPlay()
 
@@ -106,6 +102,6 @@ function game(){
        
 }
 
-game()
+// game()
 
 
