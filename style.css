@@ -9,17 +9,12 @@
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   max-width: 700px;
   margin: 0 auto;
   background-color: rgb(6, 24, 6);
   padding: 70px;
-  color: white;
-}
-
-a {
-  text-decoration: none;
   color: white;
 }
 
@@ -33,6 +28,16 @@ a:hover {
   border: 1px solid white;
   padding: 0.3em;
   color: rgb(204, 171, 110);
+}
+
+.help {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin: 0 auto;
 }
 
 .container {
@@ -64,7 +69,9 @@ main {
   display: flex;
   justify-content: center;
   margin: 50px;
-  background-color: rgb(204, 171, 110);
+  background-color: black;
+  color: white;
+  font-weight: bold;
 }
 
 .winner-description {
@@ -80,6 +87,8 @@ span {
   border: 1px solid white;
   padding: 0.7em 4em;
   margin: 0 -7em 0 -7em;
+  background-color: white;
+  border: 4px solid blanchedalmond;
 }
 
 .player-label,
@@ -112,4 +121,41 @@ button:focus {
 }
 
 @media (max-width: 460px) {
+}
+
+.game-end {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bolder;
+  padding-bottom: 20px;
+}
+
+.rock-paper-scissors-label {
+  font-weight: bolder;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.rock-paper-scissors-label::before {
+  content: "paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock";
+  background-color: blanchedalmond;
+  font-size: 0.3rem;
+  display: block;
+  font-weight: 900;
+  color: black;
+  width: 68%;
+  margin: 0 auto;
+}
+
+.rock-paper-scissors-label::after {
+  content: "paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock";
+  background-color: blanchedalmond;
+  font-size: 0.3rem;
+  display: block;
+  font-weight: 900;
+  color: black;
+  width: 68%;
+  margin: 0 auto;
 }

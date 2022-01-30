@@ -1,106 +1,115 @@
 
 
 
-/**
- * computerPlay() to select random string from an array | Helper function 1
- */
+const playerScore_span = document.querySelector(".player-score");
+const computerScore_span = document.querySelector(".computer-score");
+const rockSelection_btn = document.querySelector(".rock");
+const paperSelection_btn = document.querySelector(".paper");
+const scissorsSelection_btn = document.querySelector(".scissors");
+const gameEnd_div = document.querySelector(".game-end")
+const roundFeedBack = document.querySelector(".winner-description")
+
 const gameOptions = ["Rock", "Paper", "Scissors"]
+
+
+
+
+       rockSelection_btn.addEventListener("click", () => {
+            console.log("rock selected");
+        })
+        
+        paperSelection_btn.addEventListener("click", () => {
+            console.log("paper selected");
+        })
+        
+        scissorsSelection_btn.addEventListener("click", () => {
+            console.log("scissors selected");
+        })
+        
+
+
+//  function capitalize(string) {
+//     let array = string.split(" ")
+//     for (let i = 0; i < array.length; i++) {
+//         array[i] = array[i].charAt(0).toUpperCase() + array[i].slice(1).toLowerCase();    
+//     }
+//     let newString = array.join(" ")
+//     return newString
+// }
+
+
+function game(){
+    console.log(`A GAME OF ROCK PAPER SCISSORS [ YOU vs THE COMPUTER ]`);
+   
+    let playerScore = 0
+    let computerScore = 0
+    let numOfPlay = 0
+
+    while (numOfPlay !== 5 ) {
+
+    // const playerSelection = capitalize(prompt(`rock, paper or Scissors ?`))
+    
+    // const playerSelection =
+    const computerSelection = computerPlay()
+
+    const gameRoundWinner = playRound(playerSelection, computerSelection)
+
+        if (gameRoundWinner === 1) {
+            computerScore += 1
+            computerScore_span.innerHTML = computerScore
+            console.log(`computer currently has ${computerScore}`);
+        }
+
+        if (gameRoundWinner === 2) {
+            playerScore += 1
+            playerScore_span.innerHTML = playerScore
+            console.log(`player currently has ${playerScore}`);
+        }
+
+        if (computerScore === 5 || playerScore === 5) {
+            numOfPlay = 5
+        }
+    }  
+
+        if (computerScore === 5) {
+            gameEnd_div.innerHTML = `computer wins!`
+            computerScore = 0
+            playerScore = 0
+            console.log(`Computer  Wins`);
+        } else {
+            gameEnd_div.innerHTML = `you win!`
+            computerScore = 0
+            playerScore = 0
+            console.log(`You  Win`);
+        }
+        
+}
+
+
 
 function computerPlay () {
     randomOption = gameOptions[Math.floor(Math.random() * gameOptions.length)];
     return randomOption
 }
 
-
-
-/**
- * capitalize() the first letter of string | Helper function 2
- */
-
- function capitalize(string) {
-    let array = string.split(" ")
-    for (let i = 0; i < array.length; i++) {
-        array[i] = array[i].charAt(0).toUpperCase() + array[i].slice(1).toLowerCase();    
-    }
-    let newString = array.join(" ")
-    return newString
-}
-
-
- /**
-* playRound(playerSelection, computerSelection) and returns a string that declears 
-* the winner of the round e.g. "you loose! Paper beats Rock"
-*/
-
 function playRound (a, b) {
     console.log(`You:${a} --- Computer:${b}`);
 
     if ((b === 'Rock' && a === 'Scissors') || (b === 'Scissors' && a === 'Paper') || (b === 'Paper' && a === 'Rock')) {
+        roundFeedBack.innerHTML = `You Lose! ${b} beats ${a}`
         console.log(`You Lose! ${b} beats ${a}`);
         return 1
     } else if ((a === 'Rock' && b === 'Scissors') || (a === 'Scissors' && b === 'Paper') || (a === 'Paper' && b === 'Rock')) {
+        roundFeedBack.innerHTML = `You Lose! ${a} beats ${b}`
         console.log(`You Win! ${a} beats ${b}`);
         return 2
     } else {
+        roundFeedBack.innerHTML = `It's a tie! Play again`
         console.log(`It's a tie! Play again`);
         return 0
     }
-
 }
 
-// console.log(playRound(playerSelection,computerSelection));
-
-
-/**
- * 
- 
- * Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that 
- * keeps score and reports a winner or loser at the end.
- * 
- */
-
-function game(){
-    console.log(`A GAME OF ROCK PAPER SCISSORS [ YOU vs THE COMPUTER ]`);
-    let playerScore = 0
-    let computerScore = 0
-    let numOfPlay = 0
-
-    while (numOfPlay !== 5 ) {
- 
-    const playerSelection = capitalize(prompt(`rock, paper or Scissors ?`))
-    const computerSelection = computerPlay()
-
-    const gameRoundWinner = playRound(playerSelection, computerSelection)
-    
-    if (gameRoundWinner === 1) {
-        computerScore += 1
-        
-        console.log(`computer currently has ${computerScore}`);
-    }
-
-    if (gameRoundWinner === 2) {
-        playerScore += 1
-        
-        console.log(`player currently has ${playerScore}`);
-    }
-
-    if (computerScore === 5 || playerScore === 5) {
-        numOfPlay = 5
-    }
-
-    }
-
-
-    
-
-    if (computerScore === 5) {
-        console.log(`Computer  Wins`);
-    } else {
-        console.log(`You  Win`);
-}
-
-       
-}
 
 // game()
 
