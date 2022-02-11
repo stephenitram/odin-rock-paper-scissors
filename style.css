@@ -19,7 +19,7 @@ header {
 }
 
 a:hover {
-  color: rgb(204, 171, 110);
+  color: rgb(70, 172, 75);
   cursor: pointer;
   transform: scale(1.5);
 }
@@ -27,7 +27,7 @@ a:hover {
 .logo {
   border: 1px solid white;
   padding: 0.3em;
-  color: rgb(204, 171, 110);
+  color: rgb(70, 172, 75);
 }
 
 .help {
@@ -41,7 +41,7 @@ a {
 }
 
 .container {
-  background-color: rgb(204, 171, 110);
+  background-color: rgb(70, 172, 75);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -88,7 +88,7 @@ span {
   padding: 0.7em 4em;
   margin: 0 -7em 0 -7em;
   background-color: white;
-  border: 4px solid blanchedalmond;
+  border: 4px solid rgb(20, 20, 20);
 }
 
 .player-label,
@@ -140,7 +140,7 @@ button:focus {
 
 .rock-paper-scissors-label::before {
   content: "paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock";
-  background-color: blanchedalmond;
+  background-color: rgb(70, 172, 75);
   font-size: 0.3rem;
   display: block;
   font-weight: 900;
@@ -151,7 +151,7 @@ button:focus {
 
 .rock-paper-scissors-label::after {
   content: "paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock-paper-scissors rock";
-  background-color: blanchedalmond;
+  background-color: rgb(70, 172, 75);
   font-size: 0.3rem;
   display: block;
   font-weight: 900;
